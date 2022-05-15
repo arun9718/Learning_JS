@@ -7,3 +7,28 @@ console.log("Hello JS");
 
 
 let a;//default value is undefined
+
+//We have funcitons in javascript
+//Two types of functions ->unparameterized and parameterized
+//return is not compulsory
+//if nothing is returned then undefined is returned
+//else the return value
+
+//syntax
+function fn(){
+  console.log("Say Hello to funciton in JS");
+  //return undefined
+}
+
+//parameterized
+function fun1(a,b)
+{
+  console.log(a+" "+b);
+  return "paramterized"
+}
+
+default_type=fn();
+fun_type=fun1(10,20);
+
+console.log(default_type);
+console.log(fun_type);
