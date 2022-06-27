@@ -1,0 +1,43 @@
+body{
+  margin: 0px;
+}
+*{
+  box-sizing: border-box;
+}
+.header{
+  height :5rem;
+  background-color: black;
+  display :flex;
+  align-items: center;
+}
+.color-pallete{
+  height : 70%;
+  width : 30%;
+  background-color: grey;
+  margin-right: 5rem;
+  margin-left: 2rem;
+  display:flex;
+  align-items: center;
+}
+.pink{
+  background-color: lightpink;
+}
+.green{
+  background-color: lightgreen;
+}
+.blue{
+  background-color: lightblue;
+}
+.black{
+  background-color: black;
+}
+.color-boxes{
+  height :100%;
+  width: 25%;
+  /*border :10px solid #7f8c8d ;*/
+}
+.options{
+  height : 70%;
+  width : 25%;
+  background-color: #7f8c8d;
+}

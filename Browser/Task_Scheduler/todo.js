@@ -1,4 +1,5 @@
 //select elements
+//query selector retunr only the first matching query
 let addTask=document.querySelector("button");
 let input = document.querySelector("input");
 let ul= document.querySelector("ul");
