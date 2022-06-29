@@ -9,5 +9,6 @@ for(let i=0;i<colors.length;i++){
     main.style.backgroundColor =color;
     console.log(elem);
 
+
   }
 }
