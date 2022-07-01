@@ -1,5 +1,6 @@
-let colors = document.querySelectorAll(".color");
-let main = document.querySelector(".main");
+const colors = document.querySelectorAll(".color");
+const main = document.querySelector(".main");
+const addBtn = document.querySelector(".add");
 for(let i=0;i<colors.length;i++){
   colors[i].addEventListener("click",changeColor);
   function changeColor(e){
@@ -11,4 +12,20 @@ for(let i=0;i<colors.length;i++){
 
 
   }
+}
+
+addBtn.addEventListener("click",createTicket);
+function createTicket(){
+  let ticket = document.createElement("div");
+  ticket.setAttribute("class","ticket");
+  ticket.innerHTML=`
+  <div class="ticket-header">
+  </div>
+  <div class="ticket-content">
+    <div class="rand-id">
+      #QES4FGG
+    </div>
+    <textarea name="name" class="text-area"></textarea>
+  </div>`
+  main.appendChild(ticket);
 }
