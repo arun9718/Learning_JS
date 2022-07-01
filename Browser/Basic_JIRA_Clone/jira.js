@@ -6,7 +6,7 @@ for(let i=0;i<colors.length;i++){
     let elem = e.currentTarget;
     let classes = elem.classList;
     let color = classes[1];
-    main.style.backgroundColor =color;
+    main.style.backgroundColor=color;
     console.log(elem);
 
 

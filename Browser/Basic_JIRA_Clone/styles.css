@@ -12,12 +12,14 @@ body{
 }
 .color-pallete{
   height : 70%;
-  width : 30%;
+  width : 15rem;
   background-color: grey;
   margin-right: 5rem;
   margin-left: 2rem;
   display:flex;
   align-items: center;
+  border-radius: 5%;
+
 }
 
 .color-boxes{
@@ -31,6 +33,7 @@ body{
 .color{
   height :50%;
   width:50%;
+  border-radius:20%;
 }
 .pink{
   background-color: lightpink;
@@ -46,9 +49,10 @@ body{
 }
 .options{
   height : 70%;
-  width : 25%;
+  width : 8rem;
   background-color: #7f8c8d;
   display:flex;
+  border-radius: 5%;
 }
 .box{
   width:50%;
@@ -56,6 +60,7 @@ body{
   display:flex;
   justify-content: center;
   align-items: center;
+  border-radius:20%;
 
 }
 .icon{
