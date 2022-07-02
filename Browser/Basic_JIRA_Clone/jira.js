@@ -34,18 +34,21 @@ function createTicket(){
   </div>`
   main.appendChild(ticket);
 
-  let header = document.querySelector(".ticket-header");
-  header.addEventListener("click",changeColor);
+  let headers = document.querySelectorAll(".ticket-header");
+  console.log(headers);
+  for(let i=0 ;i<headers.length;i++)
+    headers[i].addEventListener("click",changeColor);
 
 
 }
 function changeColor(e){
-  let header = e.currentTarget;
-  let classes = header.classList;
+  let h = e.currentTarget;
+  console.log(h);
+  let classes = h.classList;
   let curr_color = classes[1];
 
   let currIdx=0;
-  for(let i=0;i,color.length;i++){
+  for(let i=0;i<color.length;i++){
     if(curr_color==color[i])
     {
       currIdx=i;
