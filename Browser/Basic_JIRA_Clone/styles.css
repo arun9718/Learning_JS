@@ -54,6 +54,9 @@ body{
   display:flex;
   border-radius: 5%;
 }
+.clicked{
+  background-color: #343c36;
+}
 .box{
   width:50%;
   height:100%;

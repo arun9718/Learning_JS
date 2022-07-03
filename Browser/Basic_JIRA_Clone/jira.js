@@ -64,3 +64,21 @@ function changeColor(e){
 
 
 }
+
+const colorBoxes =  document.querySelectorAll(".color-boxes");
+for(let i =0 ;i<colorBoxes.length;i++){
+  colorBoxes[i].addEventListener("click",filterTicket);
+}
+
+function filterTicket(e){
+  let ele = e.currentTarget;
+  let secondClass = ele.classList[1];
+  if(secondClass=="clicked"){
+    ele.classList.remove("clicked");
+  }
+  else{
+    for(let i=0;i<colorBoxes.length;i++)
+      colorBoxes[i].classList.remove("clicked");
+    ele.classList.add("clicked");
+  }
+}
