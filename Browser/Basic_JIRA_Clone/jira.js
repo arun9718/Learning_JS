@@ -17,20 +17,73 @@ const color = ["pink","blue","green","black"];
 
 addBtn.addEventListener("click",function () {
     // create a ticket
-    createTicket();
+    if(isLocked == true){
+      alert("First Unlock!!!");
+      return;
+    }
+    addBtn.classList.add("clicked");
+    window.setTimeout("changeBackgdColor()",100);
+    handleCreation();
 });
-function createTicket(){
-  let id = uuidv4();
+function changeBackgdColor(){
+  addBtn.classList.remove("clicked");
+}
+function handleCreation() {
+    // 2. main -> ticket add
+    isDelete = false;
+    let id = uuidv4();
+    // logic creating a box -> it will exist
+    createModal(id);
+}
+function createModal(id) {
+    let cColor = "black";
+    let modal = document.createElement("div");
+    modal.setAttribute("class", "modal");
+    modal.innerHTML = `
+            <textarea class="contentarea"
+            placeholder="Enter some Task"
+            ></textarea>
+            <div class="pallet_container">
+                <div class="pallet_color pink"></div>
+                <div class="pallet_color blue"></div>
+                <div class="pallet_color green"></div>
+                <div class="pallet_color black "></div>
+            </div>`;
+    main.appendChild(modal);
+    // color choose
+    let allColors = modal.querySelectorAll(".pallet_color");
+    for (let i = 0; i < allColors.length; i++) {
+        allColors[i].addEventListener("click", function (e) {
+            cColor = allColors[i].classList[1];
+            allColors[i].classList.add("clicked");
+        })
+    }
+    // color code
+    modal.addEventListener("keypress", function (e) {
+        let key = e.key;
+        if (key == "Enter") {
+            // get text, color
+            let textarea = modal.querySelector("textarea");
+            let text = textarea.value;
+            // destory;
+            modal.remove();
+            // return text color
+            createTicket(id, cColor, text);
+        }
+    })
+}
+
+function createTicket(id,color,text){
   let ticket = document.createElement("div");
   ticket.setAttribute("class","ticket");
   ticket.innerHTML=`
-  <div class="ticket-header black">
+  <div class="ticket-header ${color}">
   </div>
   <div class="ticket-content">
     <div class="rand-id">
       #${id}
     </div>
-    <textarea name="name" class="text-area"></textarea>
+    <textarea name="name" class="text-area">${text}</textarea>
   </div>`
   main.appendChild(ticket);
 
@@ -42,6 +95,10 @@ function createTicket(){
 
 }
 function changeColor(e){
+  if(isLocked == true){
+    alert("First Unlock!!!");
+    return;
+  }
   let h = e.currentTarget;
   console.log(h);
   let classes = h.classList;
@@ -71,6 +128,10 @@ for(let i =0 ;i<colorBoxes.length;i++){
 }
 
 function filterTicket(e){
+  if(isLocked==false){
+    alert("First Lock app !!");
+    return;
+  }
   let ele = e.currentTarget;
   let clickedColor = ele.children[0].classList[1];
   let secondClass = ele.classList[1];
@@ -95,4 +156,18 @@ function showonlyMyColor(clickedColor){
     else
       tickets[i].style.display = "none";
   }
+}
+
+function deleteTicket(){
+
+  if(isDelete == true && isLocked == false)
+  {
+    let tickets =  document.querySelectorAll(".ticket");
+    for(let i=0;i<tickets.length;i++){
+      tickets[i].addEventListener("click",deletetheticket);
+    }
+  }
+}
+function deletetheticket(e){
+  e.curremtTarget.remove();
 }
