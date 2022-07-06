@@ -22,6 +22,7 @@ addBtn.addEventListener("click",function () {
       return;
     }
     addBtn.classList.add("clicked");
+    deleteBtn.classList.remove("clicked");
     window.setTimeout("changeBackgdColor()",100);
     handleCreation();
 });
@@ -92,13 +93,24 @@ function createTicket(id,color,text){
   for(let i=0 ;i<headers.length;i++)
     headers[i].addEventListener("click",changeColor);
 
+  let tickets = document.querySelectorAll(".ticket");
+  for(let i=0;i<tickets.length;i++){
+    tickets[i].addEventListener("click",deleteTicket);
+  }
 
+
+}
+function deleteTicket(e){
+  if(isDelete == true && isLocked == false){
+    e.currentTarget.remove();
+  }
 }
 function changeColor(e){
   if(isLocked == true){
     alert("First Unlock!!!");
     return;
   }
+
   let h = e.currentTarget;
   console.log(h);
   let classes = h.classList;
@@ -156,18 +168,4 @@ function showonlyMyColor(clickedColor){
     else
       tickets[i].style.display = "none";
   }
-}
-
-function deleteTicket(){
-
-  if(isDelete == true && isLocked == false)
-  {
-    let tickets =  document.querySelectorAll(".ticket");
-    for(let i=0;i<tickets.length;i++){
-      tickets[i].addEventListener("click",deletetheticket);
-    }
-  }
-}
-function deletetheticket(e){
-  e.curremtTarget.remove();
 }
