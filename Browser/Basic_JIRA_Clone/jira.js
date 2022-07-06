@@ -72,6 +72,7 @@ for(let i =0 ;i<colorBoxes.length;i++){
 
 function filterTicket(e){
   let ele = e.currentTarget;
+  let clickedColor = ele.children[0].classList[1];
   let secondClass = ele.classList[1];
   if(secondClass=="clicked"){
     ele.classList.remove("clicked");
@@ -80,5 +81,18 @@ function filterTicket(e){
     for(let i=0;i<colorBoxes.length;i++)
       colorBoxes[i].classList.remove("clicked");
     ele.classList.add("clicked");
+    showonlyMyColor(clickedColor);
+  }
+}
+function showonlyMyColor(clickedColor){
+  let tickets = document.querySelectorAll(".ticket");
+  for(let i=0;i<tickets.length;i++){
+    let header = tickets[i].children[0];
+    let headerColor = header.classList[1];
+    if(headerColor == clickedColor){
+      tickets[i].style.display = "block";
+    }
+    else
+      tickets[i].style.display = "none";
   }
 }
