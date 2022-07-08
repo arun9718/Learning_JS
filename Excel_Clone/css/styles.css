@@ -1,0 +1,35 @@
+/*basic css*/
+*{
+  box-sizing: border-box;
+}
+body{
+  margin :0px;
+}
+/*specific height*/
+.menu_bar{
+  border : 1px solid black;
+  height :3rem;
+  background-color: lightgrey;
+
+}
+.formula_container{
+  border : 1px solid black;
+  height :3rem;
+  background-color: lightgrey;
+
+}
+.grid_container{
+  border : 1px solid black;
+  height :calc(100vh - 7rem);
+  background-color: lightgrey;
+}
+.sheets_container{
+  border : 1px solid black;
+  height :3rem;
+  background-color: lightgrey;
+}
+.cell{
+  border:0.5px solid black;
+  height :2rem;
+  width : 5rem;
+}
