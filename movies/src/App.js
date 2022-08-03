@@ -1,9 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
 
+import Movies from './moviesComponent/Movies'
+
 function App() {
   return (
-    <div>Hello React</div>
+    <Movies></Movies>
   );
 }
 
