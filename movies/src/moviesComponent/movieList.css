@@ -9,9 +9,12 @@
     height: 30rem;
     border: 1px solid gray;
     margin-bottom: 1rem;
-    ;
+    padding : 2px;
+    text-align: center;
+    
 }
 
 .poster_img {
-    width: 100%;
+    width: 80%;
+    height :80%;
 }

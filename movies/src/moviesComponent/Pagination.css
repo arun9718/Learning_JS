@@ -1,0 +1,11 @@
+.pagination{
+    display:flex;
+    justify-content: center;
+}
+.pagination_btn{
+    height :2rem;
+    width:4.5rem;
+    border : 1px solid black;
+    border-radius: 2px;
+    text-align: center;
+}

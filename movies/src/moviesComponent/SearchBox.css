@@ -1,0 +1,9 @@
+.searchbox{
+    display:flex;
+    height:3rem;
+    justify-content: right;
+    padding:2rem;
+}
+.searchbox>*{
+    margin-inline-start: 3px;
+}
